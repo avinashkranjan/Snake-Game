@@ -9,28 +9,29 @@ class Game():
     def __init__(self):
         pygame.init()
         self.screen = pygame.display.set_mode(
-            (Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT))
+            (Config.WINDOW_WIDTH, Config.WINDOWS_HEIGHT))
         self.clock = pygame.time.Clock()
         self.BASICFONT = pygame.font.Font('freesansbold.ttf', 18)
         pygame.display.set_caption('Wormy')
         self.apple = Apple()
         self.snake = Snake()
 
-    def draw():
+    def draw(self):
         self.screen.fill(Config.BG_COLOR)
         # In here we'll draw our Snake, Apple, Grid and Score
         pygame.display.update()
-        self.clock.tick(CONFIG.FPS)
+        self.clock.tick(Config.FPS)
 
     def handleKeyEvents(self, event):
         if event.key == pygame.K_ESCAPE:
             pygame.quit()
 
-    def run():
-        while True:  # main game loop
+    def run(self):
+        run=True
+        while run:  # main game loop
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()
+                    run=False
                 elif event.type == pygame.KEYDOWN:
                     self.handleKeyEvents(event)
 

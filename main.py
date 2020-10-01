@@ -1,4 +1,4 @@
-import game from Game
+from game import Game
 
 
 def main():
@@ -7,5 +7,5 @@ def main():
     sys.exit()
 
 
-if __name__ = '__main__':
+if __name__ =="__main__":
     main()
